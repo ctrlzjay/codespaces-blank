@@ -1,0 +1,18 @@
+import random
+
+def create_wordle(word_list):
+    wordle = []
+    for word in word_list:
+        word = list(word)
+        random.shuffle(word)
+        wordle.append(''.join(word))
+    return wordle
+
+def main():
+    word_list = ['basketball', 'soccer', 'tennis', 'baseball', 'football', 'hockey', 'golf', 'volleyball', 'running', 'swimming']
+    wordle = create_wordle(word_list)
+    for i, w in enumerate(wordle):
+        print(f"{i+1}. {w}")
+
+if __name__ == "__main__":
+    main()
